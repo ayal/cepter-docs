@@ -72,7 +72,7 @@ response JSON fields:
 
 
 # Known issues:
-- when intercepting requests to different domain and changing response, you might need to include a CORS header to make the intercepted response work:
+- when intercepting requests made to a different domain and changing their response, you might need to include a CORS headers (allow-origin, allow-headers) in your response to make the intercepted response work:
 ```json
 {
   "responseHeaders": [
@@ -83,6 +83,7 @@ response JSON fields:
   ]
 }
 ```
+you might also need to handle the OPTIONS preflight request and return the CORS headers there too
 
 # Troubleshooting:
 - Check your interception rule:
