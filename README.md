@@ -29,23 +29,24 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 }
 ```
 response JSON fields for "Replace" interception type:
-- body: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
+- `body`: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
   - If absent - **empty body** will be used.
-- responseHeaders:
+- `responseHeaders`:
   -  if given, will override original response-headers
   - if missing, original response headers will be **missing** when choosing "Replace" interception type
-- status: if missing - default is 200, will override status if present
+- `status`: if absent - default is 200
 
 ### Merging Response body (Intercepting at Response-Stage)
 - choose "Merge" as interception rule type
 - if is request is of XHR type and body is of JSON type - response body will be merged into the original body using `_.merge()` function (`lodash`) 
 
-response JSON fields:
-- body: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types), If absent - **Original response body** will be used (if "Merge" interception type is chosen)
-- responseHeaders:
+response JSON fields for "Merge" interception type:
+- `body`: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
+  - If absent - **Original response body** will be used
+- `responseHeaders`:
   - if given, will be **merged** to original response headers
   - if missing, original response headers will be included when choosing "Merge" interception type
-- status: if missing - default is 200, will override status if present
+- `status`: if absent - default is 200
 
 ### Changing a Request
 
