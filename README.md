@@ -89,6 +89,6 @@ you might also need to handle the OPTIONS preflight request and return the CORS 
 
 # Troubleshooting:
 - Check your interception rule:
- -- is your regex accurate / specific enough (make sure it matches your url exactly, not less and not more)
- -- is your method correct
+ - is your regex accurate / specific enough (make sure it matches your url exactly, not less and not more)
+ - is your method correct
  - Do you have any other extension that might be interfering with Cepter (Edit this Cookie extension, for example)
