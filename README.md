@@ -17,7 +17,7 @@ response JSON fields for "Replace" interception type:
 
 ### Merging Response body (Intercepting at Response-Stage)
 - choose "Merge" as interception rule type
-- if the request is of XHR type and body is of JSON type - response body will be merged into the original body using the [`_.merge()`](https://lodash.com/docs/#merge)
+- if the request is of XHR type and body is of JSON type - response body will be merged into the original body using [`_.merge()`](https://lodash.com/docs/#merge)
 
 response JSON fields for "Merge" interception type:
 - `body`: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
