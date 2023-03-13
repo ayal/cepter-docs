@@ -4,7 +4,9 @@
 
 https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 
-### Replacing a Response body  (or intercepting at Request-Stage)
+### Replacing a Response (Intercepting at Request-Stage)
+
+#### Replacing body
 - choose "Replace" as interception rule type
 #### Basic response JSON:
 ```json
@@ -35,7 +37,7 @@ response JSON fields for "Replace" interception type:
   - if missing, original response headers will be **missing** when choosing "Replace" interception type
 - status: if missing - default is 200, will override status if present
 
-### Merging Response body (or intercepting at Response-Stage)
+### Merging Response body (Intercepting at Response-Stage)
 - choose "Merge" as interception rule type
 - if is request is of XHR type and body is of JSON type - response body will be merged into the original body using `_.merge()` function (`lodash`) 
 
