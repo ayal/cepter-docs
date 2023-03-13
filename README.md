@@ -74,7 +74,7 @@ response JSON fields for "Merge" interception type:
 
 
 # Known issues:
-- when intercepting requests made to a different domain and changing their response, you might need to include a CORS headers (allow-origin, allow-headers) in your response to make the intercepted response work:
+- when intercepting requests made to a different domain and changing their response, you might need to include a CORS headers (allow-origin / allow-headers etc...) in your response to make the intercepted response work:
 ```json
 {
   "responseHeaders": [
@@ -90,5 +90,6 @@ you might also need to handle the OPTIONS preflight request and return the CORS 
 # Troubleshooting:
 - Check your interception rule:
  - is your regex accurate / specific enough (make sure it matches your url exactly, not less and not more)
+ - do you need original body / headers - better choose "Merge" interception type
  - is your method correct
  - Do you have any other extension that might be interfering with Cepter (Edit this Cookie extension, for example)
