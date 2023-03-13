@@ -5,10 +5,9 @@
 https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 
 ### Replacing a Response (Intercepting at Request-Stage)
-
-#### Replacing body
 - choose "Replace" as interception rule type
-#### Basic response JSON:
+
+#### Replacing body JSON
 ```json
 {
   "body": {
@@ -17,8 +16,7 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
   "status": 200
 }
 ```
-#### Replacing response headers:
-#### example JSON:
+#### Replacing response headers JSON:
 ```json
 {
   "body": {},
