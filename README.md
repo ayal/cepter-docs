@@ -115,5 +115,6 @@ you might also need to handle the OPTIONS preflight request and return the CORS 
  - Do you have any other extension that might be interfering with Cepter ("Edit this Cookie" extension used to cause some trouble)
 
 # Future features:
+- toggle specific interception rules
 - export / import interceptions
 - delay responses by time
