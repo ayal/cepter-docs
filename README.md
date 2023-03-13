@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
   "status": 200
 }
 ```
-### Replacing response headers:
+#### Replacing response headers:
 #### example JSON:
 ```json
 {
