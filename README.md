@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 
 |               | Replace                             | Merge                                       |
 |---------------|-------------------------------------|---------------------------------------------|
-| **body**      | A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If absent - empty body will be used. | A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If absent - Original response body will be used. |
+| **body**      | A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If present, will replace original response body. If absent - empty body will be used. | A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If present - will be **merged** into original response using lodash _.merge(). If absent - Original response body will be used. |
 | **responseHeaders** | If given, will override original response-headers. If missing, original response headers will be missing when choosing "Replace" interception type. | If given, will be merged to original response headers. If missing, original response headers will be included when choosing "Merge" interception type. |
 | **status**    | If absent - default is 200           | If absent - default is 200                   |
 
