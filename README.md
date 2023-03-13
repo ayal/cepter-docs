@@ -29,7 +29,8 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 }
 ```
 response JSON fields for "Replace" interception type:
-- body: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types), If absent - **empty body** will be used (if "Replace" interception type is chosen)
+- body: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
+  - If absent - **empty body** will be used.
 - responseHeaders:
   -  if given, will override original response-headers
   - if missing, original response headers will be **missing** when choosing "Replace" interception type
