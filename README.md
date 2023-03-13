@@ -1,5 +1,8 @@
 # Cepter Docs
 
+## Extension link:
+https://chrome.google.com/webstore/detail/cepter/jkofigpfiofpdeghmlimifoooaipekbh?hl=en
+
 ## Basic Usage 
 
 https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
