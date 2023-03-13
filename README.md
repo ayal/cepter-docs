@@ -7,28 +7,30 @@ https://chrome.google.com/webstore/detail/cepter/jkofigpfiofpdeghmlimifoooaipekb
 
 https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 
-### Replacing a Response (Intercepting at Request-Stage)
-- choose "Replace" as interception rule type
+## Reponse JSON type:
 
-response JSON fields for "Replace" interception type:
-- `body`: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
-  - If absent - **empty body** will be used.
-- `responseHeaders`:
-  -  if given, will override original response-headers
-  - if missing, original response headers will be **missing** when choosing "Replace" interception type
-- `status`: if absent - default is 200
+```ts
+type ReplaceInterceptionResponse = {
+  body?: string | Record<string, unknown>; // A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If absent - empty body will be used.
+  responseHeaders?: { // If given, will override original response-headers. If missing, original response headers will be missing when choosing "Replace" interception type
+    name: string;
+    value: string;
+  }[];
+  status?: number; // If absent - default is 200
+}
 
-### Merging a Response (Intercepting at Response-Stage)
-- choose "Merge" as interception rule type
-- if the request is of XHR type and body is of JSON type - response body will be merged into the original body using [`_.merge()`](https://lodash.com/docs/#merge)
+type MergeInterceptionResponse = {
+  body?: string | Record<string, unknown>; // A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If absent - Original response body will be used.
+  responseHeaders?: { // If given, will be merged to original response headers. If missing, original response headers will be included when choosing "Merge" interception type.
+    name: string;
+    value: string;
+  }[];
+  status?: number; // If absent - default is 200
+}
 
-response JSON fields for "Merge" interception type:
-- `body`: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
-  - If absent - **Original response body** will be used
-- `responseHeaders`:
-  - if given, will be **merged** to original response headers
-  - if missing, original response headers will be included when choosing "Merge" interception type
-- `status`: if absent - default is 200
+type InterceptionResponse = ReplaceInterceptionResponse | MergeInterceptionResponse;
+```
+
 
 ### Changing a Request
 - choose "Change" as interception rule type
