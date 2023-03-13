@@ -93,7 +93,7 @@ response JSON fields for "Merge" interception type:
 You can have a local server running at `localhost:3300` with more advanced handling of request / response
 
 # Known issues:
-- Closing / Disconnecting / Detaching one tab disconnects all tabs 
+- Closing / Disconnecting / Detaching one tab disconnects all tabs https://bugs.chromium.org/p/chromium/issues/detail?id=1170381
 - when intercepting requests made to a different domain and changing their response, you might need to include a CORS headers (allow-origin / allow-headers etc...) in your response to make the intercepted response work:
 ```json
 {
