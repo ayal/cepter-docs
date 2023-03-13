@@ -7,27 +7,6 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 ### Replacing a Response (Intercepting at Request-Stage)
 - choose "Replace" as interception rule type
 
-#### Replacing body JSON
-```json
-{
-  "body": {
-    "key": "value"
-  },
-  "status": 200
-}
-```
-#### Replacing response headers JSON:
-```json
-{
-  "body": {},
-  "responseHeaders": [
-    {
-      "name": "headerName",
-      "value": "headerValue"
-    }
-  ],
-}
-```
 response JSON fields for "Replace" interception type:
 - `body`: A response body. Can be either an object (for XHR JSON responses) or a string (For other response types)
   - If absent - **empty body** will be used.
@@ -51,7 +30,36 @@ response JSON fields for "Merge" interception type:
 ### Changing a Request
 
 - choose "Change" as interception rule type
-- example JSON for changing the request:
+- you can either change the request url entirely or use `<URL>` as a placeholder for original url
+- requestHeaders will be **merged** into original request headers
+- requestPostData will **replace** the original request post-data
+- body / status / responseHeader fields are irrelevant when choosing "Change" interception type
+
+### Interception rule examples:
+
+#### Replacing / Merging body JSON
+```json
+{
+  "body": {
+    "key": "value"
+  }
+}
+```
+
+#### Replacing / Merging response headers JSON:
+```json
+{
+  "body": {},
+  "responseHeaders": [
+    {
+      "name": "headerName",
+      "value": "headerValue"
+    }
+  ],
+}
+```
+
+#### example for changing a request ("Change" type):
 ```json
 {
   "requestUrl": "<URL>?newParam=newValue",
@@ -67,11 +75,20 @@ response JSON fields for "Merge" interception type:
   }
 }
 ```
-- you can either change the request url entirely or use `<URL>` as a placeholder for original url
-- requestHeaders will be **merged** into original request headers
-- requestPostData will **replace** the original request post-data
-- body / status / responseHeader fields are irrelevant when choosing "Change" interception type
 
+#### example for a "redirect" response:
+```json
+{
+  "responseHeaders": [
+    {
+      "name": "Location",
+      "value": "http://localhost:3300/handler"
+    }
+  ],
+  "status": 307
+}
+```
+You can have a local server running at `localhost:3300` with more advanced handling of request / response
 
 # Known issues:
 - when intercepting requests made to a different domain and changing their response, you might need to include a CORS headers (allow-origin / allow-headers etc...) in your response to make the intercepted response work:
