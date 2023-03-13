@@ -15,7 +15,7 @@ response JSON fields for "Replace" interception type:
   - if missing, original response headers will be **missing** when choosing "Replace" interception type
 - `status`: if absent - default is 200
 
-### Merging Response body (Intercepting at Response-Stage)
+### Merging a Response (Intercepting at Response-Stage)
 - choose "Merge" as interception rule type
 - if the request is of XHR type and body is of JSON type - response body will be merged into the original body using [`_.merge()`](https://lodash.com/docs/#merge)
 
@@ -28,7 +28,6 @@ response JSON fields for "Merge" interception type:
 - `status`: if absent - default is 200
 
 ### Changing a Request
-
 - choose "Change" as interception rule type
 - you can either change the request url entirely or use `<URL>` as a placeholder for original url
 - requestHeaders will be **merged** into original request headers
