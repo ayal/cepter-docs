@@ -47,6 +47,10 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
   ],
 }
 ```
+Notes:
+- changes in response headers might not reflect in network tab, to make sure it worked - test with console / your server / postman
+- as mentioned response headers are merged with original response-header, and also filtered to be unique.
+
 
 #### example for changing a request ("Change" type):
 ```json
@@ -64,6 +68,7 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
   }
 }
 ```
+Note: changes in request-url might not reflect in network tab, to make sure it worked - test with console / your server / postman
 
 #### example for a "redirect" response:
 ```json
