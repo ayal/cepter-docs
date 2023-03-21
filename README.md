@@ -16,14 +16,6 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 | **status**    | If absent - default is 200           | If absent - default is 200                   |
 
 
-
-### Changing a Request
-- choose "Change" as interception rule type
-- you can either change the request url entirely or use `<URL>` as a placeholder for original url
-- requestHeaders will be **merged** into original request headers
-- requestPostData will **replace** the original request post-data
-- body / status / responseHeader fields are irrelevant when choosing "Change" interception type
-
 ### Interception rule examples:
 
 #### Replacing / Merging body JSON
@@ -51,6 +43,12 @@ Notes:
 - changes in response headers might not reflect in network tab, to make sure it worked - test with console / your server / postman
 - as mentioned response headers are merged with original response-header, and also filtered to be unique.
 
+### Changing a Request
+- choose "Change" as interception rule type
+- you can either change the request url entirely or use `<URL>` as a placeholder for original url
+- requestHeaders will be **merged** into original request headers
+- requestPostData will **replace** the original request post-data
+- body / status / responseHeader fields are irrelevant when choosing "Change" interception type
 
 #### example for changing a request ("Change" type):
 ```json
