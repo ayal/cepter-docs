@@ -102,7 +102,8 @@ you might also need to handle the OPTIONS preflight request and return the CORS 
   - is your URL pattern Regex accurate / specific enough? make sure it matches your url exactly and not matching unwanted requests.
   - do you need original body / headers? - better choose "Merge" interception type.
   - is your interception method correct?
- - Do you have any other extension that might be interfering with Cepter ("Edit this Cookie" extension used to cause some trouble)
+ - Do you have any other extension that might be interfering with Cepter?
+    - Cepter has known major problems with "LastPass" and other password-managers, and minor problems with "Edit this cookie" extension.
 
 # Future features:
 - toggle specific interception rules
