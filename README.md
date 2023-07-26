@@ -9,11 +9,25 @@ https://www.youtube.com/watch?v=UMzv02VMOxg&ab_channel=cepterinter
 
 ## Reponse JSON fields:
 
-|               | Replace Interception Type                  | Merge Interception Type                                       |
-|---------------|-------------------------------------|---------------------------------------------|
-| **body**      | A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If present, will replace original response body. If absent - empty body will be used. | A response body. Can be either an object (for XHR JSON responses) or a string (For other response types). If present - will be **merged** into original response using lodash _.merge(). If absent - Original response body will be used. |
-| **responseHeaders** | If given, will override original response-headers. If missing, original response headers will be missing when choosing "Replace" interception type. | If given, will be merged to original response headers. If missing, original response headers will be included when choosing "Merge" interception type. |
-| **status**    | If absent - default is 200           | If absent - default is 200                   |
+1. **body**:
+   - A response body. Can be either an object (for XHR JSON responses) or a string (For other response types).
+   - If present, it will replace the original response body.
+   - If absent, an empty body will be used.
+
+2. **responseHeaders**:
+   - If given, it will override the original response headers.
+   - If missing, the original response headers will be missing when choosing the "Replace" interception type.
+
+3. **status**:
+   - If absent, the default status is 200.
+
+Note the different behavior:
+
+|               | Replace Interception Type                            | Merge Interception Type                                                 |
+|---------------|----------------------------------------------------|------------------------------------------------------------|
+| **body**      | Will replace the original response body if present, empty body if absent. | Will be **merged** into the original response using lodash _.merge() if present, the original response body will be used if absent. |
+| **responseHeaders** | Will override the original response headers if given, the original response headers will be missing if absent. | Will be merged into the original response headers if given, the original response headers will be included if missing. |
+
 
 
 ### Interception rule examples:
