@@ -95,6 +95,7 @@ Note: changes in request-url might not reflect in network tab, to make sure it w
 }
 ```
 You can have a local server running at `localhost:3300` with more advanced handling of request / response
+Here's a simple example local server: https://gist.github.com/ayal/9b577d0459b709594f8c387c735a676c
 
 # Known issues:
 - Closing / Disconnecting / Detaching one tab disconnects all tabs https://bugs.chromium.org/p/chromium/issues/detail?id=1170381
