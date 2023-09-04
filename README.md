@@ -123,7 +123,7 @@ you might also need to handle the OPTIONS preflight request and return the CORS 
 
 ## Handling Intercepting iFrame Requests
 
-If you're intercepting iFrame requests, you might consider using the `[chrome://flags#site-isolation-trial-opt-out](chrome://flags#site-isolation-trial-opt-out)`
+If you're intercepting iFrame requests, you might consider using the `chrome://flags#site-isolation-trial-opt-out`
  flag.
 
 **Note**: If you choose to use the `#site-isolation-trial-opt-out` flag, remember to turn it back on after testing if necessary.
