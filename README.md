@@ -121,6 +121,12 @@ you might also need to handle the OPTIONS preflight request and return the CORS 
  - Do you have any other extension that might be interfering with Cepter?
     - Cepter has known major problems with "LastPass" and other password-managers, and minor problems with "Edit this cookie" extension.
 
+## Handling Intercepting iFrame Requests
+
+If you're intercepting iFrame requests, you might consider using the `#site-isolation-trial-opt-out` flag.
+
+**Note**: If you choose to use the `#site-isolation-trial-opt-out` flag, remember to turn it back on after testing if necessary.
+
 # Future features:
 - toggle specific interception rules
 - export / import interceptions
